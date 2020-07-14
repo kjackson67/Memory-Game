@@ -1,13 +1,49 @@
-const card = document.querySelectorAll(".card");
-console.log(card);
-const deck = document.querySelector(".deck");
-console.log(deck);
+// console.log("running");
+const cards = document.querySelectorAll(".card");
+const deck = document.querySelector("#deck");
 const button = document.querySelector(".game-reset");
-console.log(button);
+const names = ["Walter Peyton", "Gale Sayers", "Mike Ditka", "Dick Butkus", "Gary Fencik", "Walter Peyton", "Gale Sayers", "Mike Ditka", "Dick Butkus", "Gary Fencik"];
+let counter = 0;
+let compareArray = []
+
+for (let i = 0; i <names.length; i++) {
+    cards[i].setAttribute("value", names[i]);
+    
+}
+cards.forEach(card => {
+    card.addEventListener("click",() => {
+        if (counter < 2) {
+            let value = card.getAttribute("value");
+                console.log(value);
+            counter ++;
+            card.innerText = value;
+            compareArray.push(value);
+            if (counter >= 2) {
+                checkMatch();
+                console.log(compareArray);
+            }
+        }
+    })
+})
+
+function checkMatch () {
+    if (compareArray[0] === compareArray[1]) {
+        console.log("match");
+    } else {
+        console.log("wrong");
+    }
+}
 
 
 
-// let card = d
+// cards.forEach (card => {
+//     names.forEach (name => {
+//         card.setAttribute("value", name);
+//     })
+// })
+
+
+// let card = deck
 // class card {
 //     constructor(x, y) {
 //         this.x = x;
@@ -30,8 +66,6 @@ console.log(button);
 // card.prototype.draw = function() {
 // }
 
-
-// const cards = [card_0, card_1, card_2, card_3, card_4,card_5, card_6, card_7, card_8, card_9, card_10, card_11];
 
 // let myCard;
 // button.addEventListener("click", displayCard);

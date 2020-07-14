@@ -3,6 +3,7 @@
 // As a player- I want to click on choice of 2 random cards
 // Cards to be shuffled on restart
 // As a player - I want to match the 2 cards
+// I want to see how much time it takes to complete al matches
 // I want to hear a click on my card choices
 // I want to keep track of how many I get correct
 // I want to keep track of how many turns I take

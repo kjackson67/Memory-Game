@@ -4,7 +4,7 @@ const deck = document.querySelector("#deck");
 const button = document.querySelector(".game-reset");
 const names = ["Walter Peyton", "Gale Sayers", "Mike Ditka", "Dick Butkus", "Gary Fencik", "Walter Peyton", "Gale Sayers", "Mike Ditka", "Dick Butkus", "Gary Fencik"];
 let counter = 0;
-let move = document.querySelector(".moves");
+let move = document.querySelector(".game-counter");
 let compareArray = []
 
 for (let i = 0; i < names.length; i++) {
@@ -25,23 +25,27 @@ function shuffle(array) {
 };
 
 // cards shuffled once refreshed //
-document.body.onload = gameStart();
+// document.body.onload = gameStart();
 
-function gameStart() {
-    compareArray = [];
-    deck = shuffle(deck);
-    for (let i = 0; i< deck.length; i++);
-    deck.innerHTML = "";
-    [].forEach.call(deck, function(item) {
-        deck.appendChild(item);
-    });
-    deck[i].classList.remove("show", "open", "match", "disabled");
-    // console.log(gameStart);
-}
+// function gameStart() {
+//     compareArray = [];
+//     deck = shuffle(deck);
+//     for (let i = 0; i< deck.length; i++);
+//     deck.innerHTML = "";
+//     [].forEach.call(deck, function(item) {
+//         deck.appendChild(item);
+//     });
+//     deck[i].classList.remove("show", "open", "match", "disabled");
+//     // console.log(gameStart);
+// }
 
 // Moves in game //
 counter = 0;
-
+move.innerHTML = counter;
+for (let i = 0; i < move.length; i++) {
+    move[i].style.color = "red";
+    move[i].style.visibility = "visible";
+}
 
 
 cards.forEach(card => {

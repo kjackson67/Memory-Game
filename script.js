@@ -6,10 +6,16 @@ const names = ["Walter Peyton", "Gale Sayers", "Mike Ditka", "Dick Butkus", "Gar
 let counter = 0;
 let compareArray = []
 
-for (let i = 0; i <names.length; i++) {
+for (let i = 0; i < names.length; i++) {
     cards[i].setAttribute("value", names[i]);
-    
 }
+
+let displayCard = function() {
+    this.classList.toggle("open");
+    this.classList.toggle("show");
+    this.classList.toggle("disabled");
+};
+
 cards.forEach(card => {
     card.addEventListener("click",() => {
         if (counter < 2) {
@@ -35,6 +41,15 @@ function checkMatch () {
 }
 
 
+// function openCard() {
+//     compareArray.push(this);
+//     let length = compareArray.length;
+//     if(length === 2) {
+//         gameCounter();
+//         if(compareArray[0].type )
+//     }
+// }
+
 
 // cards.forEach (card => {
 //     names.forEach (name => {
@@ -51,6 +66,8 @@ function checkMatch () {
 //         this.size = 10;
 //     }
 // }
+
+
 
 // let cards = [];
 // const NUM_COLS = 5;
@@ -74,6 +91,9 @@ function checkMatch () {
 //     cards = card.value;
 // }
 
+    // compareArray[0].classList.add("wrong");
+    // compareArray[1].classList.add("wrong");
+    // disable();
 
 
     
@@ -81,3 +101,4 @@ function checkMatch () {
 
 
 
+// probs won't have mine completed tomorrow, but will do what can to figure it out... can't teach an old horse that doesn't know what to do 

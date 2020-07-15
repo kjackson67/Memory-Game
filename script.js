@@ -4,17 +4,45 @@ const deck = document.querySelector("#deck");
 const button = document.querySelector(".game-reset");
 const names = ["Walter Peyton", "Gale Sayers", "Mike Ditka", "Dick Butkus", "Gary Fencik", "Walter Peyton", "Gale Sayers", "Mike Ditka", "Dick Butkus", "Gary Fencik"];
 let counter = 0;
+let move = document.querySelector(".moves");
 let compareArray = []
 
 for (let i = 0; i < names.length; i++) {
     cards[i].setAttribute("value", names[i]);
 }
-
-let displayCard = function() {
-    this.classList.toggle("open");
-    this.classList.toggle("show");
-    this.classList.toggle("disabled");
+// cards shuffled //
+function shuffle(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    } 
+    return array;
+    console.log(array);
 };
+
+// cards shuffled once refreshed //
+document.body.onload = gameStart();
+
+function gameStart() {
+    compareArray = [];
+    deck = shuffle(deck);
+    for (let i = 0; i< deck.length; i++);
+    deck.innerHTML = "";
+    [].forEach.call(deck, function(item) {
+        deck.appendChild(item);
+    });
+    deck[i].classList.remove("show", "open", "match", "disabled");
+    // console.log(gameStart);
+}
+
+// Moves in game //
+counter = 0;
+
+
 
 cards.forEach(card => {
     card.addEventListener("click",() => {
@@ -40,15 +68,22 @@ function checkMatch () {
     }
 }
 
+function disable() {
+
+}
 
 // function openCard() {
 //     compareArray.push(this);
 //     let length = compareArray.length;
 //     if(length === 2) {
 //         gameCounter();
-//         if(compareArray[0].type )
+//         if(compareArray[0].type === compareArray[1].type) {
+//             match();
+//         } else {
+//             wrong();
+//         }
 //     }
-// }
+// };
 
 
 // cards.forEach (card => {
@@ -95,10 +130,15 @@ function checkMatch () {
     // compareArray[1].classList.add("wrong");
     // disable();
 
-
+    // let displayCard = function() {
+    //     this.classList.toggle("open");
+    //     this.classList.toggle("show");
+    //     this.classList.toggle("disabled");
+    // };
+    // console.log(displayCard);
+    
     
 
 
 
 
-// probs won't have mine completed tomorrow, but will do what can to figure it out... can't teach an old horse that doesn't know what to do 

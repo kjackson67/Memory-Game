@@ -6,7 +6,6 @@ const names = ["Walter Peyton", "Gale Sayers", "Mike Ditka", "Dick Butkus", "Gar
 let counter = 0;
 let moves = document.querySelector(".game-counter");
 let compareArray = [];
-let arrayCompare = [];
 
 for (let i = 0; i < names.length; i++) {
     cards[i].setAttribute("value", names[i]);
@@ -22,44 +21,52 @@ for (let i = 0; i < moves.length; i++) {
 
 // choosing card(s)
 cards.forEach(card => {
-    card.addEventListener("click",() => {
-        if (counter < 2) {
-            let value = card.getAttribute("value");
-                console.log(value);
-            counter ++;
-            card.innerText = value;
-            compareArray.push(value);
-            if (counter >= 2) {
-                checkMatch();
-                console.log(compareArray);
-            }
-        }
-    })
+    card.addEventListener("click", checkClicks);
 })
 
-let guessOne = "";
-let guessTwo = "";
+function checkClicks() {
+    console.log(this);
+    if (counter < 2) {
+        let value = this.getAttribute("value");
+            console.log(value);
+        counter ++;
+        this.innerText = value;
+        compareArray.push(this);
+        if (counter >= 2) {
+            checkMatch();
+            console.log(compareArray);
+        }
+    }
+}
+
 
 // match or not matched
 function checkMatch () {
-    if (compareArray[0] === compareArray[1]) {
+    if (compareArray[0].getAttribute("value") === compareArray[1].getAttribute("value")) {
         // reset counter to 0 if match
         // remove event.listener from matching cards
         console.log("match");
-        this.removeEventListener("click", unClick);
+        console.log(compareArray);
+        counter = 0;
+        compareArray[0].removeEventListener("click", checkClicks);
+        compareArray[1].removeEventListener("click", checkClicks);
         compareArray = [];
         } else {
+            compareArray[0].innerText = "";
+            compareArray[1].innerText = "";
+            counter = 0;
+            compareArray = [];
         // dont match hide selections
         // reset counter to 0
         console.log("wrong");
     };
 }
 
-function unClick() {
-    compareArray[0].classList.remove("value");
-    compareArray[1].classList.remove("value");
-    compareArray = [];
-}
+// function unClick() {
+//     compareArray[0].classList.remove("value");
+//     compareArray[1].classList.remove("value");
+//     compareArray = [];
+// }
 
 // function disable() {
 // }

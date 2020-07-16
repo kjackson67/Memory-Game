@@ -5,7 +5,8 @@ const button = document.querySelector(".game-reset");
 const names = ["Walter Peyton", "Gale Sayers", "Mike Ditka", "Dick Butkus", "Gary Fencik", "Walter Peyton", "Gale Sayers", "Mike Ditka", "Dick Butkus", "Gary Fencik"];
 let counter = 0;
 let moves = document.querySelector(".game-counter");
-let compareArray = []
+let compareArray = [];
+let arrayCompare = [];
 
 for (let i = 0; i < names.length; i++) {
     cards[i].setAttribute("value", names[i]);
@@ -36,13 +37,16 @@ cards.forEach(card => {
     })
 })
 
+let guessOne = "";
+let guessTwo = "";
+
 // match or not matched
 function checkMatch () {
     if (compareArray[0] === compareArray[1]) {
         // reset counter to 0 if match
         // remove event.listener from matching cards
         console.log("match");
-        this.removeEventListener("click", );
+        this.removeEventListener("click", unClick);
         compareArray = [];
         } else {
         // dont match hide selections
@@ -50,6 +54,13 @@ function checkMatch () {
         console.log("wrong");
     };
 }
+
+function unClick() {
+    compareArray[0].classList.remove("value");
+    compareArray[1].classList.remove("value");
+    compareArray = [];
+}
+
 // function disable() {
 // }
 

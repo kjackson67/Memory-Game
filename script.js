@@ -6,6 +6,7 @@ const names = ["Walter Peyton", "Gale Sayers", "Mike Ditka", "Dick Butkus", "Gar
 let counter = 0;
 let moves = document.querySelector(".game-counter");
 let compareArray = [];
+let matches = 0
 
 for (let i = 0; i < names.length; i++) {
     cards[i].setAttribute("value", names[i]);
@@ -51,6 +52,8 @@ function checkMatch () {
         compareArray[0].removeEventListener("click", checkClicks);
         compareArray[1].removeEventListener("click", checkClicks);
         compareArray = [];
+        matches ++;
+        checkWin();
         } else {
             compareArray[0].innerText = "";
             compareArray[1].innerText = "";
@@ -60,6 +63,12 @@ function checkMatch () {
         // reset counter to 0
         console.log("wrong");
     };
+}
+
+function checkWin () {
+    if (matches === 5) {
+        alert("You WIN");
+    } 
 }
 
 // function unClick() {

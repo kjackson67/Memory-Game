@@ -4,50 +4,22 @@ const deck = document.querySelector("#deck");
 const button = document.querySelector(".game-reset");
 const names = ["Walter Peyton", "Gale Sayers", "Mike Ditka", "Dick Butkus", "Gary Fencik", "Walter Peyton", "Gale Sayers", "Mike Ditka", "Dick Butkus", "Gary Fencik"];
 let counter = 0;
-let move = document.querySelector(".game-counter");
+let moves = document.querySelector(".game-counter");
 let compareArray = []
 
 for (let i = 0; i < names.length; i++) {
     cards[i].setAttribute("value", names[i]);
 }
-// cards shuffled //
-function shuffle(array) {
-    let currentIndex = array.length, temporaryValue, randomIndex;
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    } 
-    return array;
-    console.log(array);
-};
 
-// cards shuffled once refreshed //
-// document.body.onload = gameStart();
-
-// function gameStart() {
-//     compareArray = [];
-//     deck = shuffle(deck);
-//     for (let i = 0; i< deck.length; i++);
-//     deck.innerHTML = "";
-//     [].forEach.call(deck, function(item) {
-//         deck.appendChild(item);
-//     });
-//     deck[i].classList.remove("show", "open", "match", "disabled");
-//     // console.log(gameStart);
-// }
-
-// Moves in game //
+// resetting moves in game //
 counter = 0;
-move.innerHTML = counter;
-for (let i = 0; i < move.length; i++) {
-    move[i].style.color = "red";
-    move[i].style.visibility = "visible";
+moves.innerHTML = counter;
+for (let i = 0; i < moves.length; i++) {
+    moves[i].style.color = "red";
+    moves[i].style.visibility = "visible";
 }
 
-
+// choosing card(s)
 cards.forEach(card => {
     card.addEventListener("click",() => {
         if (counter < 2) {
@@ -64,17 +36,22 @@ cards.forEach(card => {
     })
 })
 
+// match or not matched
 function checkMatch () {
     if (compareArray[0] === compareArray[1]) {
+        // reset counter to 0 if match
+        // remove event.listener from matching cards
         console.log("match");
-    } else {
+        this.removeEventListener("click", );
+        compareArray = [];
+        } else {
+        // dont match hide selections
+        // reset counter to 0
         console.log("wrong");
-    }
+    };
 }
-
-function disable() {
-
-}
+// function disable() {
+// }
 
 // function openCard() {
 //     compareArray.push(this);
@@ -107,7 +84,6 @@ function disable() {
 // }
 
 
-
 // let cards = [];
 // const NUM_COLS = 5;
 // const NUM_ROWS = 2;
@@ -118,9 +94,6 @@ function disable() {
 //     cards.push(new tileX(tileX, tileY));
 //     };
 // };
-
-// card.prototype.draw = function() {
-// }
 
 
 // let myCard;
@@ -140,9 +113,34 @@ function disable() {
     //     this.classList.toggle("disabled");
     // };
     // console.log(displayCard);
+
     
-    
+    // cards shuffled once refreshed //
+// document.section.button = gameStart();
+// function gameStart() {
+//     compareArray = [];
+//     deck = shuffle(deck);
+//     for (let i = 0; i< deck.length; i++);
+//     deck.innerHTML = "";
+//     [].forEach.call(deck, function(item) {
+//         deck.appendChild(item);
+//     });
+//     deck[i].classList.remove("show", "open", "match", "disabled");
+//     console.log(gameStart);
+// }
 
+// cards shuffled //
+// function shuffle(array) {
+//     let currentIndex = array.length, temporaryValue, randomIndex;
+//     while (currentIndex !== 0) {
+//         randomIndex = Math.floor(Math.random() * currentIndex);
+//         currentIndex -= 1;
+//         temporaryValue = array[currentIndex];
+//         array[currentIndex] = array[randomIndex];
+//         array[randomIndex] = temporaryValue;
+//     } 
+//     console.log(array);
 
+//     return array;
 
-
+// https://jsfiddle.net/james2doyle/qsQun/ = check for CSS

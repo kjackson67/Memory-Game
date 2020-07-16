@@ -30,8 +30,10 @@ h1 {
 .card {
     height: 100px;
     width: 90px;
-    background-color: darkgreen;
+    background-color: orange;
     border: 1px solid black;
+    font-size: 25px;
+    font-weight: bold;
 }
 .game-cards {
     width: 100%;
@@ -47,20 +49,17 @@ h1 {
     color: black;
 }
 
-/* .deck {
-    height: 4px;
-    width: 4px;
+/* .game-board {
+    height: 40px;
+    width: 40px;
     margin: 1px 1px;
     background: whitesmoke;
     font-size: 0;
     color: black;
     border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 5px 2px 25px navy; */
-/* } */
+    display: grid;
+    box-shadow: 5px 2px 25px navy;
+} */
 
 footer {
     width: 100%;

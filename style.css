@@ -10,11 +10,10 @@ body {
     padding: 35px;
 } 
 
-.container {
-    margin: auto;
+/* .container {
     width: 85px;
-
-}
+    height: 290px;
+} */
 
 header {
     width: 100%;
@@ -42,8 +41,8 @@ h1 {
     font-size: 25px;
     font-weight: bold;
     /* display: grid; */
-    transform: scale;
-    transform-style: preserve-3d;
+    /* transform: scale;
+    transform-style: preserve-3d; */
     position: relative;
 }
 /* .game-cards {
@@ -61,16 +60,16 @@ h1 {
 } */
 
 .game-board {
-    height: auto;
-    width: auto;
+    height: 300px;
+    width: 550px;
     margin: auto;
     /* background: whitesmoke;
     color: black; */
-    /* border-radius: 10px; */
+    border: 10px;
     display: flex;
     flex-wrap: wrap;
-    /* perspective: 1000px; */
     box-shadow: 10px 5px 25px navy;
+    justify-content: space-between;
 }
 
 footer {

@@ -7,10 +7,16 @@ let counter = 0;
 let moves = document.querySelector(".game-counter");
 let compareArray = [];
 let matches = 0
+const shuffledNames = [];
 
-for (let i = 0; i < names.length; i++) {
-    cards[i].setAttribute("value", names[i]);
-}
+// for (let i =0; i< names.length; i++) {
+//     shuffledNames[Math.floor(Math.random()*names.length -1)] = names[i];
+// }
+// console.log(shuffledNames);
+
+// for (let i = 0; i < names.length; i++) {
+//     cards[i].setAttribute("value", names[i]);
+// }
 
 // resetting moves in game //
 counter = 0;

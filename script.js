@@ -9,14 +9,14 @@ let compareArray = [];
 let matches = 0
 const shuffledNames = [];
 
-// for (let i =0; i< names.length; i++) {
-//     shuffledNames[Math.floor(Math.random()*names.length -1)] = names[i];
-// }
-// console.log(shuffledNames);
+for (let i =0; i< names.length; i++) {
+    shuffledNames[Math.floor(Math.random()*names.length -1)] = names[i];
+}
+console.log(shuffledNames);
 
-// for (let i = 0; i < names.length; i++) {
-//     cards[i].setAttribute("value", names[i]);
-// }
+for (let i = 0; i < names.length; i++) {
+    cards[i].setAttribute("value", names[i]);
+}
 
 // resetting moves in game //
 counter = 0;
@@ -116,17 +116,6 @@ function checkWin () {
 //     }
 // }
 
-
-// let cards = [];
-// const NUM_COLS = 5;
-// const NUM_ROWS = 2;
-// for (var i = 0; i< NUM_COLS; i++) {
-//     for (var j = 0; j < NUM_ROWS; j++); {
-//     const tileX = i * 10 + 5;
-//     const tileY = j * 10 + 2;
-//     cards.push(new tileX(tileX, tileY));
-//     };
-// };
 
 
 // let myCard;

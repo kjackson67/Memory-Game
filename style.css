@@ -10,11 +10,6 @@ body {
     padding: 35px;
 } 
 
-/* .container {
-    width: 85px;
-    height: 290px;
-} */
-
 header {
     width: 100%;
     height: 55px;
@@ -45,19 +40,6 @@ h1 {
     transform-style: preserve-3d; */
     position: relative;
 }
-/* .game-cards {
-    width: 100%;
-    background: white;
-    padding: 150px;
-    border-radius: 3px;
-    box-shadow: 7px 8px 25px 0 navy;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 0 10px;
-    color: black;
-} */
 
 .game-board {
     height: 300px;
@@ -82,14 +64,27 @@ footer {
     font-size: 20px;
 }
 
-
-
-
-
-
-
-
-
 .game-reset {
     font-size: 135px;
 }
+
+
+/* .game-cards {
+    width: 100%;
+    background: white;
+    padding: 150px;
+    border-radius: 3px;
+    box-shadow: 7px 8px 25px 0 navy;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 0 10px;
+    color: black;
+} */
+
+
+/* .container {
+    width: 85px;
+    height: 290px;
+} */

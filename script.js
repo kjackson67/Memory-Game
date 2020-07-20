@@ -15,7 +15,7 @@ const shuffledNames = [];
         card.style.order = randomPos;
     });
 })();
-console.log(cards);
+// console.log(cards);
 
 for (let i = 0; i < names.length; i++) {
     cards[i].setAttribute("value", names[i]);
@@ -36,22 +36,21 @@ cards.forEach(card => {
 
 function checkClicks() {
     console.log(this);
-    if (counter < 2) {
+    if (counter = 2) {
         let value = this.getAttribute("value");
             console.log(value);
         counter ++;
         this.innerText = value;
         compareArray.push(this);
-        if (counter >= 2) {
+        if (counter = 2) {
             checkMatch();
             console.log(compareArray);
-        }
-    }
-}
-
+        };
+    };
+};
 
 // match or not matched
-function checkMatch () {
+function checkMatch() {
     if (compareArray[0].getAttribute("value") === compareArray[1].getAttribute("value")) {
         // reset counter to 0 if match
         // remove event.listener from matching cards
@@ -132,14 +131,6 @@ function checkWin () {
     // compareArray[1].classList.add("wrong");
     // disable();
 
-    // let displayCard = function() {
-    //     this.classList.toggle("open");
-    //     this.classList.toggle("show");
-    //     this.classList.toggle("disabled");
-    // };
-    // console.log(displayCard);
-
-    
     // cards shuffled once refreshed //
 // document.section.button = gameStart();
 // function gameStart() {
@@ -167,10 +158,3 @@ function checkWin () {
 //     console.log(array);
 
 //     return array;
-
-// https://jsfiddle.net/james2doyle/qsQun/ = check for CSS
-
-// for (let i =0; i< names.length; i++) {
-//     shuffledNames[Math.floor(Math.random()*names.length -1)] = names[];
-// }
-// console.log(shuffledNames);

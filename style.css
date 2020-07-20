@@ -13,7 +13,7 @@ body {
 header {
     width: 100%;
     height: 55px;
-    background: whitesmoke;
+    background: rgba(223, 106, 63, 0.639);
     color: navy;
     text-align: center;
     line-height: 50px;
@@ -29,14 +29,15 @@ h1 {
 }
 
 h2 {
-    font-size: small;
+    font-size: medium;
+    text-align: center;
 }
 
 .card {
     height: 100px;
     width: 100px;
-    background-color: red;
-    border: 1px solid black;
+    background-color: rgba(300, 7, 7, 1.250);
+    border: 2px solid black;
     font-size: 25px;
     font-weight: bold;
     /* display: grid; */
@@ -47,7 +48,7 @@ h2 {
 
 .game-board {
     height: 300px;
-    width: 550px;
+    width: 600px;
     margin: auto;
     /* background: whitesmoke;
     color: black; */
@@ -56,16 +57,17 @@ h2 {
     flex-wrap: wrap;
     box-shadow: 10px 5px 25px navy;
     justify-content: space-between;
+    align-items: center;
 }
 
 footer {
     width: 100%;
-    height: 30px;
+    height: 25px;
     background: navy;
     color: darkgoldenrod;
     text-align: center;
-    line-height: 30px;
-    font-size: 20px;
+    line-height: 25px;
+    font-size: 18px;
 }
 
 .game-reset {

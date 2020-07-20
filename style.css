@@ -28,6 +28,10 @@ h1 {
     height: 40px;
 }
 
+h2 {
+    font-size: small;
+}
+
 .card {
     height: 100px;
     width: 100px;

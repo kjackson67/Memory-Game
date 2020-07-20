@@ -9,10 +9,13 @@ let compareArray = [];
 let matches = 0
 const shuffledNames = [];
 
-for (let i =0; i< names.length; i++) {
-    shuffledNames[Math.floor(Math.random()*names.length -1)] = names[i];
-}
-console.log(shuffledNames);
+(function shuffle() {
+    cards.forEach(card => {
+        let randomPos = Math.floor(Math.random() * 10);
+        card.style.order = randomPos;
+    });
+})();
+console.log(cards);
 
 for (let i = 0; i < names.length; i++) {
     cards[i].setAttribute("value", names[i]);
@@ -166,3 +169,8 @@ function checkWin () {
 //     return array;
 
 // https://jsfiddle.net/james2doyle/qsQun/ = check for CSS
+
+// for (let i =0; i< names.length; i++) {
+//     shuffledNames[Math.floor(Math.random()*names.length -1)] = names[];
+// }
+// console.log(shuffledNames);

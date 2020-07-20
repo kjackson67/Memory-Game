@@ -9,6 +9,7 @@ let compareArray = [];
 let matches = 0
 const shuffledNames = [];
 
+// Shuffle cards on refresh //
 (function shuffle() {
     cards.forEach(card => {
         let randomPos = Math.floor(Math.random() * 10);
@@ -34,13 +35,14 @@ cards.forEach(card => {
     card.addEventListener("click", checkClicks);
 })
 
+
 function checkClicks() {
-    console.log(this);
+    // console.log(this);
     if (counter = 2) {
         let value = this.getAttribute("value");
             console.log(value);
         counter ++;
-        this.innerText = value;
+        this.innerHTML = value;
         compareArray.push(this);
         if (counter = 2) {
             checkMatch();
@@ -56,10 +58,11 @@ function checkMatch() {
         // remove event.listener from matching cards
         console.log("match");
         console.log(compareArray);
-        counter = 0;
+        // counter = 0;
         compareArray[0].removeEventListener("click", checkClicks);
         compareArray[1].removeEventListener("click", checkClicks);
         compareArray = [];
+        counter ++;
         matches ++;
         checkWin();
         } else {
@@ -67,13 +70,14 @@ function checkMatch() {
             compareArray[1].innerText = "";
             counter = 0;
             compareArray = [];
+            counter ++;
         // dont match hide selections
         // reset counter to 0
         console.log("wrong");
     };
 }
 
-function checkWin () {
+function checkWin() {
     if (matches === 5) {
         alert("You WIN");
     } 
